@@ -3,16 +3,17 @@
     padding: 0;
 } */
 
-html, body
-{ overflow: hidden;}
+html,
+body {
+  overflow: hidden;
+}
 
 body {
-    background: red;
+  background: black;
+  margin: 0;
+  padding: 0;
 }
 
 .webgl {
-    position: fixed;
-    top: 0;
-    left: 0;
-    /* outline: none; */
+  /* outline: none; */
 }

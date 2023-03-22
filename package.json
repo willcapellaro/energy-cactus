@@ -14,6 +14,7 @@
   "dependencies": {
     "gsap": "^3.11.5",
     "lil-gui": "^0.18.1",
+    "papaparse": "^5.4.0",
     "three": "^0.148.0",
     "vercel": "^28.17.0"
   }
