@@ -6,7 +6,7 @@ import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js'
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js'
 import gsap from 'gsap'
 
-
+// the real comment is here
 const barColor = "#0047FF"
 var weeklyUsage = [1, 3, 2, 5, 2, 14, 5]
 var cactusFrondsX = [0, 2, 4, 6, 8, 11, 13]
@@ -22,6 +22,8 @@ weeklyUsage[3] = Math.random() * 10
 weeklyUsage[4] = Math.random() * 10
 // weeklyUsage[5] = Math.random() * 12
 weeklyUsage[6] = Math.random() * 10
+
+// one more comment
 
 /**
  * Base
