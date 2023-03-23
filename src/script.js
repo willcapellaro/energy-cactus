@@ -50,26 +50,6 @@ input.addEventListener(
       header: true,
       complete: (results, file) => {
         // Create Scene with parsed data
-        const geometry = new THREE.SphereGeometry( 1, 32, 32 );
-        const material1 = new THREE.MeshBasicMaterial( { color: 0xffff00, wireframe:true } ); 
-        const sphere = new THREE.Mesh( geometry, material1 );
-        sphere.position.z = 5;
-        scene.add( sphere );
-
-        //camera.position.z = 4;
-        //camera.position.y = 0
-        //camera.position.x = 0
-
-        function animate() {
-          requestAnimationFrame( animate );
-
-          sphere.rotation.x += 0.01;
-          sphere.rotation.y += 0.01;
-
-          renderer.render( scene, camera );
-          }
-
-      animate();
         // Combine Interval data into a single data point for each date containing total cost and usage values
         const days = {};
         results.data.forEach((interval) => {
@@ -117,6 +97,29 @@ input.addEventListener(
 
         // Create our Cactus scene
         scene = new THREE.Scene();
+
+        const geometry = new THREE.SphereGeometry(1, 32, 32);
+        const material1 = new THREE.MeshBasicMaterial({
+          color: 0xffff00,
+        });
+        const sphere = new THREE.Mesh(geometry, material1);
+        sphere.position.z = 5;
+        scene.add(sphere);
+
+        //camera.position.z = 4;
+        //camera.position.y = 0
+        //camera.position.x = 0
+
+        function animate() {
+          requestAnimationFrame(animate);
+
+          sphere.rotation.x += 0.01;
+          sphere.rotation.y += 0.01;
+
+          renderer.render(scene, camera);
+        }
+
+        animate();
 
         fontLoader.load("/fonts/MarkOTHeavy_Regular.json", (font) => {
           const textGeometry = new TextGeometry(weeklyUsageLabels[0], {
