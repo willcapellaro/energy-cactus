@@ -641,7 +641,7 @@ const matCapTexture3 = textureLoader.load("/textures/matcaps/3.png"); // 3 = chr
 /**
  * Axes Helper
  */
-
+//
 // const axesHelper = new THREE.AxesHelper( 5 );
 // scene.add( axesHelper );
 
