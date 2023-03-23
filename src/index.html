@@ -3,12 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Energy Cactus</title>
+    <title>🌵YEMA</title>
     <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800;900&family=Yeseva+One&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="overlay">
-      <input type="file" id="gbd" name="gbd" accept=".csv" />
+      <div class="overlayGridItemTop">
+          <h1 style="font-family: 'Yeseva One', cursive; color: white; font-size: 4em;">Welcome to <span style="color: #00E297">Your Energy Museum of Art</span></h1>
+      </div>
+      <div class="overlayGridItemBottom">
+        <h2 style="color: grey; font-weight: 200">Inaugural exhibit: Energy Cactus</h2>
+        <form style="">
+          <label for="gbd" style="color: white; font-weight: 200;">Upload your gas or electric usage data</label>
+          <br>
+          <br>
+          <input style="font-family: 'Montserrat', sans-serif; color: #00E297" type="file" id="gbd" name="gbd" accept=".csv" />        
+        </form>
+      </div>
+      <br><br>
+      <p style="color: grey; font-size: 8px;">YEMA platform © Uplight Inc. Energy Cactus exhibit © Will Capellaro, Caitlin Beeson, Chris Fried</p>
     </div>
     <canvas class="webgl"></canvas>
     <script style="z-index: 2" type="module" src="./script.js"></script>

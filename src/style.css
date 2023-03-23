@@ -6,6 +6,7 @@
 html,
 body {
   overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -17,9 +18,11 @@ body {
 .overlay {
   margin: 0 1em;
   padding: 1em;
-  width: 250px;
+  width: 60%;
   max-width: 100%;
-  background: rgba(255, 255, 255, 0.5);
+  display: grid;
+  grid-template-rows: 70vh auto;
+  /* background: rgba(255, 255, 255, 0.5); */
 }
 
 .webgl {
@@ -28,4 +31,15 @@ body {
   left: 0;
   position: fixed;
   z-index: -1;
+}
+
+.h1, .h3, .h3 {
+  font-family: 'Yeseva One', cursive;
+  /* color: white; not working */
+  color: white;
+}
+
+input {
+  width: 100%;
+  color: red;
 }
