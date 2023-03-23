@@ -610,6 +610,7 @@ input.addEventListener(
         // spikestartX spikestartY spikestart Z
         // spikeSpanX spikeSpanY spikeSpanZ
         // spikeCount
+        //
 
         // for(let i = 0; i < 7; i++) {
         //     const day = new THREE.Mesh(
