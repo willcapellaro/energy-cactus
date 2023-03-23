@@ -10,7 +10,7 @@ var weeklyUsage = [0, 0, 0, 0, 0, 0, 0];
 var cactusFrondsX = [0, 2, 4, 6, 8, 11, 13];
 var weeklyUsageLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 var weeklyUsageGap = [0, 0, 0, 0, 0, 1, 1];
-var weeklyUsageZ = [0, 0, 0, 0, 0, -1, -1];
+var weeklyUsageZ = [0, 0, 0, 0, 0, 0, 0];
 var weeklyUsage2 = [6, 6, 6, 2, 4, 3, 2];
 
 // one more comment
@@ -103,9 +103,9 @@ input.addEventListener(
           color: 0xffff00,
         });
         const sphere = new THREE.Mesh(geometry, material1);
-        sphere.position.z = -0.5;
+        sphere.position.z = 0;
         sphere.position.y = 17;
-        sphere.position.x = - 9;
+        sphere.position.x = -9;
         scene.add(sphere);
 
         //camera.position.z = 4;
@@ -139,7 +139,7 @@ input.addEventListener(
           textGeometry.translate(
             -(textGeometry.boundingBox.max.x - 0.02) * 0.5 +
               cactusFrondsX[0] -
-              11 +
+              9.5 +
               textWeekdayX,
             -(textGeometry.boundingBox.max.y - 0.02) * 0.5 +
               weeklyUsage[0] +
@@ -168,7 +168,7 @@ input.addEventListener(
           textGeometry2.translate(
             -(textGeometry2.boundingBox.max.x - 0.02) * 0.5 +
               cactusFrondsX[0] -
-              9 +
+              7.5 +
               textWeekdayX,
             -(textGeometry2.boundingBox.max.y - 0.02) * 0.5 +
               weeklyUsage[1] +
@@ -196,7 +196,7 @@ input.addEventListener(
           textGeometry3.translate(
             -(textGeometry3.boundingBox.max.x - 0.02) * 0.5 +
               cactusFrondsX[2] -
-              11 +
+              9.5 +
               textWeekdayX,
             -(textGeometry3.boundingBox.max.y - 0.02) * 0.5 +
               weeklyUsage[2] +
@@ -221,7 +221,7 @@ input.addEventListener(
           textGeometry4.translate(
             -(textGeometry4.boundingBox.max.x - 0.02) * 0.5 +
               cactusFrondsX[3] -
-              11 +
+              9.5 +
               textWeekdayX,
             -(textGeometry4.boundingBox.max.y - 0.02) * 0.5 +
               weeklyUsage[3] +
@@ -246,7 +246,7 @@ input.addEventListener(
           textGeometry5.translate(
             -(textGeometry5.boundingBox.max.x - 0.02) * 0.5 +
               cactusFrondsX[4] -
-              11 +
+              9.5 +
               textWeekdayX,
             -(textGeometry5.boundingBox.max.y - 0.02) * 0.5 +
               weeklyUsage[4] +
@@ -271,7 +271,7 @@ input.addEventListener(
           textGeometry6.translate(
             -(textGeometry6.boundingBox.max.x - 0.02) * 0.5 +
               cactusFrondsX[5] -
-              11 +
+              9.5 +
               textWeekdayX,
             -(textGeometry6.boundingBox.max.y - 0.02) * 0.5 +
               weeklyUsage[5] +
@@ -296,7 +296,7 @@ input.addEventListener(
           textGeometry7.translate(
             -(textGeometry7.boundingBox.max.x - 0.02) * 0.5 +
               cactusFrondsX[6] -
-              11 +
+              9.5 +
               textWeekdayX,
             -(textGeometry7.boundingBox.max.y - 0.02) * 0.5 +
               weeklyUsage[6] +
@@ -413,45 +413,64 @@ input.addEventListener(
         group.add(dais);
 
         const cactusTrunk = new THREE.Mesh(
-          new THREE.BoxGeometry(2, 4, 2),
+          new THREE.CylinderGeometry(0.5, 0.5, 6),
           new THREE.MeshMatcapMaterial({ matcap: matCapTexture2 })
         );
         cactusTrunk.position.x = 2;
-        cactusTrunk.position.y = 2;
+        cactusTrunk.position.y = 3;
         cactusTrunk.position.z = 0;
         // cactusTrunk.center()
         group.add(cactusTrunk);
 
-        const cactusLayer2 = new THREE.Mesh(
-          new THREE.BoxGeometry(4, 1, 2),
-          new THREE.MeshMatcapMaterial({ matcap: matCapTexture2 })
-        );
-        cactusLayer2.position.x = 2;
-        cactusLayer2.position.y = 4.5;
-        cactusLayer2.position.z = 0;
-        // cactusTrunk.center()
-        group.add(cactusLayer2);
+        // const cactusLayer2 = new THREE.Mesh(
+        //   new THREE.BoxGeometry(4, 2.5, 2),
+        //   new THREE.MeshMatcapMaterial({ matcap: matCapTexture2 })
+        // );
+        // cactusLayer2.position.x = 2;
+        // cactusLayer2.position.y = 4.5;
+        // cactusLayer2.position.z = 0;
+        // // cactusTrunk.center()
+        // group.add(cactusLayer2);
 
         const cactusLayer3Weekday = new THREE.Mesh(
-          new THREE.BoxGeometry(9, 1, 1),
+          new THREE.CylinderGeometry(0.5, 0.5, 8),
           new THREE.MeshMatcapMaterial({ matcap: matCapTexture2 })
         );
-        cactusLayer3Weekday.position.x = -3.5;
-        cactusLayer3Weekday.position.y = 5.5;
-        cactusLayer3Weekday.position.z = 0.5;
+        cactusLayer3Weekday.rotateZ(Math.PI * 0.5);
+        cactusLayer3Weekday.position.x = -2;
+        cactusLayer3Weekday.position.y = 6;
+        cactusLayer3Weekday.position.z = 0;
         // cactusTrunk.center()
         group.add(cactusLayer3Weekday);
 
-        const cactusLayer3Weekend = new THREE.Mesh(
-          new THREE.BoxGeometry(3, 1, 1),
+        const cap1 = new THREE.Mesh(
+          new THREE.SphereGeometry(0.5, 16, 16),
           new THREE.MeshMatcapMaterial({ matcap: matCapTexture2 })
         );
+        cap1.position.x = -6;
+        cap1.position.y = 6;
+        cap1.position.z = 0;
+        group.add(cap1);
+
+        const cactusLayer3Weekend = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.5, 0.5, 5),
+          new THREE.MeshMatcapMaterial({ matcap: matCapTexture2 })
+        );
+        cactusLayer3Weekend.rotateZ(Math.PI * 0.5);
         cactusLayer3Weekend.position.x = 4.5;
-        cactusLayer3Weekend.position.y = 5.5;
-        cactusLayer3Weekend.position.z = -0.5;
+        cactusLayer3Weekend.position.y = 6;
+        cactusLayer3Weekend.position.z = 0;
         // cactusTrunk.center()
         group.add(cactusLayer3Weekend);
 
+        const cap4 = new THREE.Mesh(
+          new THREE.SphereGeometry(0.5, 16, 16),
+          new THREE.MeshMatcapMaterial({ matcap: matCapTexture2 })
+        );
+        cap4.position.x = 7;
+        cap4.position.y = 6;
+        cap4.position.z = 0;
+        group.add(cap4);
         /**
          * Cactus fronds
          *
@@ -473,15 +492,24 @@ input.addEventListener(
 
         for (let i = 0; i < 7; i++) {
           const day = new THREE.Mesh(
-            new THREE.BoxGeometry(1, weeklyUsage[i], 1),
+            new THREE.CylinderGeometry(0.5, 0.5, weeklyUsage[i]),
+            new THREE.MeshMatcapMaterial({ matcap: matCapTexture2 })
+          );
+
+          const cap = new THREE.Mesh(
+            new THREE.SphereGeometry(0.5, 16, 16),
             new THREE.MeshMatcapMaterial({ matcap: matCapTexture2 })
           );
           // day.position.x = i * 1.3
 
-          day.position.x = i * 2 + weeklyUsageGap[i] - 7.5;
+          day.position.x = i * 2 + weeklyUsageGap[i] - 6;
           day.position.y = weeklyUsage[i] / 2 + 6;
-          day.position.z = weeklyUsageZ[i] + 0.5;
+          day.position.z = weeklyUsageZ[i];
+          cap.position.x = i * 2 + weeklyUsageGap[i] - 6;
+          cap.position.y = weeklyUsage[i] + 6;
+          cap.position.z = weeklyUsageZ[i];
           group.add(day);
+          group.add(cap);
         }
 
         /**
@@ -526,9 +554,9 @@ input.addEventListener(
           }
         }
 
-        addSpikes(0.2, 0.2, 0.2, 1.1, 0.2, 1.1, 1.9, 4, 0, 5); // trunk
-        addSpikes(0.2, 0.2, 0.2, 1.1, 0.2, -1.1, 1.9, 4, 0, 5); // back trunk
-        addSpikes(0.2, 0.2, 0.2, -8, 5.2, 1.2, 9, 0.8, 0, 10); // weekday bar
+        // addSpikes(0.2, 0.2, 0.2, 1.1, 0.2, 1.1, 1.9, 4, 0, 5); // trunk
+        // addSpikes(0.2, 0.2, 0.2, 1.1, 0.2, -1.1, 1.9, 4, 0, 5); // back trunk
+        // addSpikes(0.2, 0.2, 0.2, -8, 5.2, 1.2, 9, 0.8, 0, 10); // weekday bar
 
         // addSpikes(0.2, 0.2, 0.2, 0, 0, 0, 0, 0, 0, 1, 'fsfds')
 
@@ -547,33 +575,33 @@ input.addEventListener(
         // }
 
         for (let i = 0; i < 7; i++) {
-          addSpikes(
-            0.2,
-            0.2,
-            0.2,
-            cactusFrondsX[i] - 7.9,
-            weeklyUsage[i] * yRatio + yOffset,
-            weeklyUsageZ[i] + 1.15,
-            0.8,
-            weeklyUsage[i],
-            0,
-            Math.floor(weeklyUsage[i])
-          );
+          // addSpikes(
+          //   0.2,
+          //   0.2,
+          //   0.2,
+          //   cactusFrondsX[i] - 7.9,
+          //   weeklyUsage[i] * yRatio + yOffset,
+          //   weeklyUsageZ[i] + 1.15,
+          //   0.8,
+          //   weeklyUsage[i],
+          //   0,
+          //   Math.floor(weeklyUsage[i])
+          // );
         }
 
         for (let i = 0; i < 7; i++) {
-          addSpikes(
-            0.2,
-            0.2,
-            0.2,
-            cactusFrondsX[i] - 7.9,
-            weeklyUsage[i] * yRatio + yOffset,
-            weeklyUsageZ[i] - 0.1,
-            0.8,
-            weeklyUsage[i],
-            0,
-            Math.floor(weeklyUsage[i])
-          );
+          // addSpikes(
+          //   0.2,
+          //   0.2,
+          //   0.2,
+          //   cactusFrondsX[i] - 7.9,
+          //   weeklyUsage[i] * yRatio + yOffset,
+          //   weeklyUsageZ[i] - 0.1,
+          //   0.8,
+          //   weeklyUsage[i],
+          //   0,
+          //   Math.floor(weeklyUsage[i])
+          // );
         }
 
         // gui
@@ -622,7 +650,7 @@ const matCapTexture3 = textureLoader.load("/textures/matcaps/3.png"); // 3 = chr
 
 const fontLoader = new FontLoader();
 
-const textWeekdayZ = 0.75;
+const textWeekdayZ = 0;
 const textWeekdayX = 3.5;
 const frondTextYoffset = -2;
 
