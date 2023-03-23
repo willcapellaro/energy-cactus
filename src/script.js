@@ -98,12 +98,14 @@ input.addEventListener(
         // Create our Cactus scene
         scene = new THREE.Scene();
 
-        const geometry = new THREE.SphereGeometry(1, 32, 32);
+        const geometry = new THREE.SphereGeometry(3, 32, 32);
         const material1 = new THREE.MeshBasicMaterial({
           color: 0xffff00,
         });
         const sphere = new THREE.Mesh(geometry, material1);
-        sphere.position.z = 5;
+        sphere.position.z = -0.5;
+        sphere.position.y = 17;
+        sphere.position.x = - 9;
         scene.add(sphere);
 
         //camera.position.z = 4;
