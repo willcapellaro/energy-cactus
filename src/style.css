@@ -14,6 +14,18 @@ body {
   padding: 0;
 }
 
+.overlay {
+  margin: 0 1em;
+  padding: 1em;
+  width: 250px;
+  max-width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+}
+
 .webgl {
   /* outline: none; */
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: -1;
 }
