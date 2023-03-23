@@ -1,4 +1,3 @@
-import * as dat from "lil-gui";
 import * as Papa from "papaparse";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
@@ -24,7 +23,7 @@ var weeklyUsage2 = [6, 6, 6, 2, 4, 3, 2];
  * Debug
  */
 
-const gui = new dat.GUI();
+// const gui = new dat.GUI();
 
 /**
  * Canvas
@@ -283,17 +282,17 @@ input.addEventListener(
           const text7 = new THREE.Mesh(textGeometry7, textMaterial);
           scene.add(text7);
 
-          const textGuiFolder = gui.addFolder("Frond Labels");
-          gui;
-          textGuiFolder.add(text2.position, "x", -3, 3);
-          gui;
-          textGuiFolder.add(text2.position, "y", -3, 3);
-          gui;
-          // .add(text2.textGeometry2.Mesh, 'wireframe') //why not working?
-          gui;
-          textGuiFolder.add(text2, "visible");
-          gui;
-          textGuiFolder.add(text1, "visible");
+          // const textGuiFolder = gui.addFolder("Frond Labels");
+          // gui;
+          // textGuiFolder.add(text2.position, "x", -3, 3);
+          // gui;
+          // textGuiFolder.add(text2.position, "y", -3, 3);
+          // gui;
+          // // .add(text2.textGeometry2.Mesh, 'wireframe') //why not working?
+          // gui;
+          // textGuiFolder.add(text2, "visible");
+          // gui;
+          // textGuiFolder.add(text1, "visible");
         });
 
         /**
@@ -301,7 +300,7 @@ input.addEventListener(
          */
 
         const group = new THREE.Group();
-        group.position.x = -3.5;
+        group.position.x = 0;
         group.position.y = -Math.max(...weeklyUsage) / 2 - 2;
         scene.add(group);
         // signage
@@ -342,7 +341,7 @@ input.addEventListener(
         signGroup.add(signPole2);
 
         signGroup.add(sign);
-        signGroup.position.x = -9;
+        signGroup.position.x = -5.5;
         signGroup.position.y = -7;
         signGroup.position.z = 1;
         scene.add(signGroup);
@@ -600,14 +599,14 @@ const matCapTexture3 = textureLoader.load("/textures/matcaps/3.png"); // 3 = chr
 const fontLoader = new FontLoader();
 
 const textWeekdayZ = 0.75;
-const textWeekdayX = 0;
+const textWeekdayX = 3.5;
 const frondTextYoffset = -2;
 
 /**
  * Sizes
  */
 const sizes = {
-  width: window.innerWidth,
+  width: window.innerWidth * 0.65,
   height: window.innerHeight,
 };
 
@@ -615,7 +614,7 @@ const sizes = {
 
 window.addEventListener("resize", () => {
   // console.log('window has been resized')
-  sizes.width = window.innerWidth;
+  sizes.width = window.innerWidth * 0.65;
   sizes.height = window.innerHeight;
 
   //update camera
@@ -661,10 +660,10 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   100
 );
-camera.position.x = -0.58;
-camera.position.y = -0.032;
-camera.rotation.y = 10;
-camera.position.z = 17;
+camera.position.x = 0;
+camera.position.y = 0;
+camera.rotation.y = 0;
+camera.position.z = 20;
 scene.add(camera);
 // camera.lookAt(group)
 // camera.lookAt(group)
