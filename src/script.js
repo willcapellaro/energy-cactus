@@ -105,7 +105,7 @@ input.addEventListener(
         const sphere = new THREE.Mesh(geometry, material1);
         sphere.position.z = -0.5;
         sphere.position.y = 17;
-        sphere.position.x = - 9;
+        sphere.position.x = -9;
         scene.add(sphere);
 
         //camera.position.z = 4;
@@ -612,7 +612,7 @@ const matCapTexture3 = textureLoader.load("/textures/matcaps/3.png"); // 3 = chr
 /**
  * Axes Helper
  */
-
+//
 // const axesHelper = new THREE.AxesHelper( 5 );
 // scene.add( axesHelper );
 
